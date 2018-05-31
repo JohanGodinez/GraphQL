@@ -5,9 +5,15 @@ import { makeExecutableSchema } from 'graphql-tools';
 import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 
-import typeDefs from './schemas'
-import resolvers from './resolvers'
-import models from './api/models'
+// import typeDefs from './schemas'
+// import resolvers from './resolvers'
+import models from './models'
+
+import path from 'path';
+import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
+const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './types')));
+const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
+
 
 const schema = makeExecutableSchema({
     typeDefs,
