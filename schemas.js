@@ -7,11 +7,12 @@ export default `
     }
 
     type Query{
-        saludo: String
+        allEstudiantes: [Estudiante]!
+        getEstudiante(_id: ID!): Estudiante!      
     }
 
     type Mutation {
-        createEstudiante (Nombre: String, Apelldio: String, FechaNac: String): Estudiante
+        createEstudiante (Nombre: String, Apellido: String, FechaNac: String): Estudiante
     }
 
 `;

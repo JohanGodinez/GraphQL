@@ -1,4 +1,4 @@
-import Estudiantes from './estudiantes'
+import Estudiantes from './Estudiantes'
 
 export default {
     Estudiantes

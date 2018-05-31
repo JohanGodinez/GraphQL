@@ -6,12 +6,12 @@ import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 
 import typeDefs from './schemas'
-import resolver from './resolvers'
+import resolvers from './resolvers'
 import models from './api/models'
 
 const schema = makeExecutableSchema({
     typeDefs,
-    resolver,
+    resolvers,
 });
 const PORT = 3000;
 

@@ -1,8 +1,9 @@
 export default {
     Query: {
-        saludo: (parent, args, contexto, info) => {saludo: "Hola mundo"}
-    },  
+        allEstudiantes: (parent, args, {models}) => models.Estudiantes.find(),
+        getEstudiante: (parent, args, {models}) => models.Estudiantes.findOne(),
+    },
     Mutation: {
-        createEstudiante: (parent, args, {models}) => models.Estudiantes.create(args)
+        createEstudiante: (parent, args, {models}) => models.Estudiantes.create(args),
     },
 }
