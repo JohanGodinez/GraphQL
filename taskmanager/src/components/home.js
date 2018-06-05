@@ -46,4 +46,4 @@ export default graphql(query)(
 			</Item>
 			<Table rowKey="_id" bordered dataSource={allUsers} columns={columns}/>
 		</div>
-)
+)	
